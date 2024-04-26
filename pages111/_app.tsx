@@ -1,5 +1,5 @@
 import { SWRConfig } from "swr";
-import "../global.css";
+// import "./globals.css";
 
 export default function App({ Component, pageProps }: any) {
   console.log("_app");
