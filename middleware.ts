@@ -12,11 +12,9 @@ const publicOnlyUrls: Routes = {
 };
 
 export async function middleware(request: NextRequest) {
-  console.log("middleware");
-
   const session = await getSession();
   const isPublicPath = publicOnlyUrls[request.nextUrl.pathname];
-  console.log("session", session);
+
   if (!session.id) {
     if (!isPublicPath) {
       return NextResponse.redirect(new URL("/", request.url));
